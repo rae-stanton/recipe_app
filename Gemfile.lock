@@ -263,6 +263,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  bundle lock --add-platform x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -298,4 +299,3 @@ RUBY VERSION
 
 BUNDLED WITH
    2.4.5
-bundle lock --add-platform x86_64-linux
