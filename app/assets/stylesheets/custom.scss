@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 10px;
 }
 
 section {
@@ -13,6 +13,11 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
 }
 
 .center {
