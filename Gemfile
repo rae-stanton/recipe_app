@@ -10,7 +10,6 @@ gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'popper_js', '~> 2.11', '>= 2.11.6'
 #gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
 #gem 'jsbundling-rails', '~> 1.1', '>= 1.1.1'
-gem "bootstrap-sass"
 
 gem 'rake', '~> 13.0', '>= 13.0.6'
 
@@ -18,10 +17,6 @@ gem 'rake', '~> 13.0', '>= 13.0.6'
 gem "sprockets-rails"
 
 gem 'bundler', '~> 2.4', '>= 2.4.5'
-
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
 gem 'pg', '~> 1.4', '>= 1.4.5'
 
 # Use the Puma web server [https://github.com/puma/puma]
