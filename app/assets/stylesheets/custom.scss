@@ -15,14 +15,19 @@ textarea {
   resize: vertical;
 }
 
+/* NAV */
 .navbar-nav > li{
   padding-left:30px;
   padding-right:30px;
+  text-align: right;
 }
 
 .navbar-nav > li > a {
-  color: green;
+  color: rgb(51, 100, 51);
+  text-transform: uppercase;
+  text-decoration: none;
 }
+
 
 .center {
   text-align: center;
@@ -42,7 +47,9 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
+  margin-top: 30px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -54,26 +61,22 @@ h2 {
   color: #777;
 }
 
+h3 {
+  font-size: 1.4em;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+  text-align: center;
+  font: caption;
+  color: black;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
-/* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: green;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  text-decoration: none;
-}
+body {
+  background-color: whitesmoke;
+  }
 
-#logo:hover {
-  color: rgb(95, 218, 95);
-  text-decoration: none;
-}
