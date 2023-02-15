@@ -1,22 +1,23 @@
 class RecipeController < ApplicationController
   def new
     @recipe = Recipe.new
-    @ingredients = Ingredient.all
+   # @ingredients = @recipe.ingredients
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @ingredients = Ingredient.all
+   # @ingredients = @recipe.ingredients
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.author = current_user
+    @recipe.save
 
-    if recipe.save
+    if @recipe.save
       redirect_to :action => 'list'
     else
-      @ingredients = Ingredient.all
-      render :action => 'new'
+      render 'new'
   end
 
   def update
