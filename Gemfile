@@ -60,6 +60,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry', '~> 0.14.2'
   gem 'rubocop', '~> 1.44'
+  gem 'rspec'
 end
 
 group :development do
