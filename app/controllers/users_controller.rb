@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     user = User.create()
   end
 
-  #private
-  #def user_params
-  #  params.permit(:username, :password)
-  #end
-
-#end
+  private
+  def user_params
+    params.permit(:username, :password)
+  end
+  
+end
