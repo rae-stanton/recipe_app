@@ -46,8 +46,17 @@ RSpec.describe UsersController, type: :controller do
       end 
 
       it "returns a status of 422" do
-        expect(#fillin
-        ).to have_http_status(422)
+        
+        post :create, params: {
+            user: {
+              name: "Foosta",
+              email: " ",
+              password: " ",
+              password_confirmation: " ",
+            }
+          }
+        
+        expect(response).to have_http_status(422)
       end
 
     end
