@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get  "/about",   to: "static_pages#about"
   get '/signup'  => 'users#new'
   resources :users
+  get "/recipes/index"
  end
+
