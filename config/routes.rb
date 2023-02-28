@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/signup'  => 'users#new'
   resources :users
   get "/recipes/index"
+  get "/recipes/show"
  end
 
