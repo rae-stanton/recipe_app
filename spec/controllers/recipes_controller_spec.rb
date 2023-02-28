@@ -25,10 +25,10 @@ RSpec.describe RecipesController, type: :controller do
     end
   end
 
-  #describe "show action" do
-   # it "renders the :show view" do
-   #   get :recipe, params: { recipe_id: 1}
-   #   expect(response).to render_template "recipes/show"
-  #  end
- # end
+  describe "show action" do
+    it "renders the :show view" do
+      get :show, params: { id: recipe.id }
+      expect(response).to render_template "recipes/show"
+    end
+  end
 end
