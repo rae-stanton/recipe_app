@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let(:faust) { User.create(name: "Faust") }
-  let(:recipe) { Recipe.create(name: "Eggplant Hee Hee", author: faust, difficulty: "beginner") }
+  let(:recipe) { Recipe.create(name: "Eggplant Hee Hee", author: faust, difficulty: "beginner", favorite: true) }
 
   it 'has an author' do
     expect(recipe.author.name).to eq("Faust")
@@ -29,4 +29,13 @@ RSpec.describe Recipe, type: :model do
       expect(recipe.difficulty).to eq("expert")
     end
   end
+
+    it "is a favorite recipe" do
+      expect(recipe.favorite).to be(true)
+    end
+
+    it "is not a favorite recipe" do
+      recipe.favorite = false
+      expect(recipe.favorite).to be(false)
+    end
 end

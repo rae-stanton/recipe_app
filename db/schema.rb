@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_25_202753) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_212642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_202753) do
     t.text "description"
     t.text "notes"
     t.integer "difficulty"
+    t.boolean "favorite", default: false, null: false
     t.index ["author_id"], name: "index_recipes_on_author_id"
   end
 
