@@ -12,3 +12,4 @@ class Recipe < ApplicationRecord
   validates :difficulty, presence: true
   validates :name, presence: true
 end
+

@@ -9,11 +9,26 @@ RSpec.describe RecipesController, type: :controller do
       password_confirmation: "foosta"
     ) 
   end
+    let!(:recipe) do 
+      Recipe.create(
+        name: "Eggplant Hee Hee", 
+        description: "something", 
+        difficulty: "beginner",
+        author: user
+      ) 
+    end
   
-  describe 'index action' do  
+  describe "index action" do  
     it "renders the :index view" do
       get :index
       expect(response).to render_template "recipes/index"
+    end
+  end
+
+  describe "show action" do
+    it "renders the :show view" do
+      get :show, params: { id: recipe.id }
+      expect(response).to render_template "recipes/show"
     end
   end
 end
