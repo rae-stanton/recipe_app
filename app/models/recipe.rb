@@ -11,5 +11,7 @@ class Recipe < ApplicationRecord
   }
   validates :difficulty, presence: true
   validates :name, presence: true
+
+  scope :favorites, -> { where(favorite: true) }
 end
 
