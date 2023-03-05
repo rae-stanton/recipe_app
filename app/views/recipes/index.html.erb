@@ -4,6 +4,6 @@
 <h2>Recipes of Foosta</h2>
   <% @recipes.each do |recipe| %>
    <li><%= recipe.name %></li>
-   <%= link_to "View Recipe", recipes_show_path(id: recipe.id) %>
+   <%= link_to "View Recipe", recipe_path(id: recipe.id) %>
 <% end %>
 
