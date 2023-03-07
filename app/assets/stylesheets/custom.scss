@@ -64,7 +64,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: .8em;
   letter-spacing: normal;
   margin-bottom: 20px;
   text-align: center;
@@ -82,3 +82,14 @@ body {
   background-color: whitesmoke;
   }
 
+/* recipe cards */
+
+.card-deck {
+  display:inline-block;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+}

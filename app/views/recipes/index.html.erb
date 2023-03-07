@@ -1,9 +1,30 @@
-<h1>This is a placeholder for a recipe index page</h1>
+<h1>Recipes</h1>
 
 
-<h2>Recipes of Foosta</h2>
+<h2>Some recipes for you:</h2>
   <% @recipes.each do |recipe| %>
-   <li><%= recipe.name %></li>
-   <%= link_to "View Recipe", recipe_path(id: recipe.id) %>
-<% end %>
 
+  <div class="card-deck">
+    <div class="container">
+      <div class="row mx-auto">
+        <div class="col-md-4">
+          <div class="card text-center" style="width: 25rem; h-100">
+            <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title">
+                <%= recipe.name %>
+                </h2>
+                <br>
+                <h3>
+                <%= recipe.difficulty %>
+                </h3>
+              <p class="card-text"><%= recipe.description %></p>
+              <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
