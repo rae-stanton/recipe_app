@@ -1,14 +1,19 @@
+<h1> Recipe Details </h1>
 
-<h1><%= @recipe.name %></h1>
-<h2><%= @recipe.difficulty %> </h2>
+<div class="container">
+  <div class="card d-flex mb-3" style="h-100; width: 100;">
+    <div class="d-flex justify-content-center pt-4">
+      <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089" 
+            class="card-image rounded" alt="...">
+    </div>
+    <div class="card-body">
+      <h2 class="fs-1 card-title"><%= @recipe.name %></h2>
+      <p class="d-flex justify-content-start"><%= @recipe.description %></p>
+      <p class="d-flex justify-content-start"><small class="text-muted"><%= @recipe.difficulty %></small></p>
+    </div>
+  </div>
+</div>
 
-<body>
-  <%= @recipe.description %>
-</body>
-<!-- This will render a full page containing a single recipe from the index page - 
-index will link to each of their respetive pages containing:
-name of recipe, difficulty, and a short description at minimum. 
-https://guides.rubyonrails.org/routing.html for guide on 'show' pages -->
 
 
 
