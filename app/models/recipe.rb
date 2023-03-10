@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   belongs_to :author, class_name: "User"
 
   has_many :ingredients
-  
+
   enum difficulty: {
     beginner: 0,
     intermediate: 1,
@@ -14,4 +14,3 @@ class Recipe < ApplicationRecord
 
   scope :favorites, -> { where(favorite: true) }
 end
-
