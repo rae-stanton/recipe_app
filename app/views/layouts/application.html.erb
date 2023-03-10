@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <title>RecipeApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +8,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
@@ -17,3 +18,5 @@
     <%= yield %>
   </body>
 </html>
+
+<script>window.process = { env: { NODE_ENV: "#{Rails.env}" } }</script>
