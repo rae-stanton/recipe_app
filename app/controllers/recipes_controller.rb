@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   def index
     @recipes = @current_user.recipes
   end
@@ -8,4 +7,3 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 end
-
