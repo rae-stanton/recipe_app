@@ -7,6 +7,10 @@ class DashboardController < ApplicationController
 		def users
 			@current_user
 		end
+
+		def favorite_recipes
+			@recipes.favorites
+		end
 	end
 
 	def show
