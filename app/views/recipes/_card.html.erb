@@ -12,7 +12,7 @@
           <%= recipe.difficulty %>
           </h3>
         <p class="card-text"><%= recipe.description %></p>
-        <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary" %>
+        <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary", id: "button_#{recipe.id}" %>
       </div>
     </div>
   </div>
