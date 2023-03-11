@@ -37,6 +37,7 @@ RSpec.describe "Recipes Index Page",
       goes back to the index page,
       clicks another see recipe button,
       views the recipe details' do
+
     visit recipes_path
     expect(page).to have_content("Recipes")
     expect(page).to have_content("Some recipes for you:")
