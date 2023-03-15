@@ -6,15 +6,15 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="cards-wrapper">
-      <% 3.times do %>
+      <% @favorite_recipes.each do |recipe| %>
         <div class="card carousel-card" style="">
           <div class="image-wrapper">
             <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089" alt="...">
           </div>
           <div class="card-body">
-            <h5 class="card-title">Recipe Name</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">See Recipe</a>
+            <h5 class="card-title"><%= recipe.name %></h5>
+            <p class="card-text"><%= recipe.description %></p>
+            <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
@@ -33,7 +33,7 @@
             <a href="#" class="btn btn-primary">See Recipe</a>
           </div>
         </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>
