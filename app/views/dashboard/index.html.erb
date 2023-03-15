@@ -1,0 +1,48 @@
+<h1>Welcome, <%= @current_user.name %>!</h1>
+
+<h2>Here are some of your favorite recipes:</h2>
+
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+      <% 3.times do %>
+        <div class="card carousel-card" style="">
+          <div class="image-wrapper">
+            <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Recipe Name</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">See Recipe</a>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+      <% 3.times do %>
+        <div class="card carousel-card" style="">
+          <div class="image-wrapper">
+            <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Recipe Name</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">See Recipe</a>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
