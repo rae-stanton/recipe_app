@@ -10,8 +10,11 @@
       <h2 class="fs-1 card-title"><%= @recipe.name %></h2>
       <p class="d-flex justify-content-start"><%= @recipe.description %></p>
       <p class="d-flex justify-content-start"><small class="text-muted"><%= @recipe.difficulty %></small></p>
-      <p class="d-flex justify-content-start"><small class="text-muted"><%= display_favorite(@recipe.favorite) %></small></p>
-      <%= button_to "Favorite", recipe_favorite_path(recipe_id: @recipe.id), class: "btn btn-primary" %>
+      <% if @recipe.favorite == true %>
+      <%= button_to "Favorited Recipe", recipe_favorite_path(recipe_id: @recipe.id), class: "btn btn-primary" %>
+      <% else %>
+      <%= button_to "Favorite This Recipe", recipe_favorite_path(recipe_id: @recipe.id), class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
