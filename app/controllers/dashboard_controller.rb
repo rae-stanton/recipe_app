@@ -1,8 +1,10 @@
 class DashboardController < ApplicationController
-	def index
-		@recipes = @current_user.recipes
-	end
+  def index
+    @all_recipes = @current_user.recipes
+    @favorite_recipes = @all_recipes.favorites
+  end
 
-	def show
-	end
+  def show
+  end
 end
+
