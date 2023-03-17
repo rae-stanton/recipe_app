@@ -32,9 +32,9 @@ class Recipe < ApplicationRecord
 
   scope :favorites, -> { where(favorite: true) }
 
-  #def display_fave
-  #  return 'Favorite (from model)' if favorite
+  def toggle_favorite!
+    return update(favorite: false) if favorite.present? # this is equivalent to favorite == true
 
-    #'Not a Fave (from model)'
-  #end
+    update(favorite: true)
+  end
 end
