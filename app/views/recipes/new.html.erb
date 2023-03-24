@@ -4,25 +4,38 @@
   <div>
     <%= form.label :name, "Recipe name" %><br>
     <%= form.text_field :name %>
+    <% @recipe.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :description, "Recipe description" %><br>
     <%= form.text_field :description %>
+    <% @recipe.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :difficulty, "Select a difficulty:" %><br>
-    <%= radio_button_tag(:difficulty, "Beginner") %>
-      <%= label_tag(:difficulty_beginner, "This is a beginner-friendly recipe") %><br>
-    <%= radio_button_tag(:difficulty, "Intermediate") %>
-      <%= label_tag(:difficulty_intermediate, "This is an intermediate recipe") %><br>
-    <%= radio_button_tag(:difficulty, "Advanced") %>
-      <%= label_tag(:difficulty_advanced, "This is an advanced recipe") %><br>
-    <%= radio_button_tag(:difficulty, "Expert") %>
-      <%= label_tag(:difficulty_expert, "This is a pro-level recipe.") %><br>
-  </div>
 
+    <%= radio_button_tag(:difficulty_beginner, "Beginner") %>
+      <%= label_tag(:difficulty_beginner, "This is a beginner-friendly recipe") %><br>
+
+    <%= radio_button_tag(:difficulty_intermediate, "Intermediate") %>
+      <%= label_tag(:difficulty_intermediate, "This is an intermediate recipe") %><br>
+
+    <%= radio_button_tag(:difficulty_advanced, "Advanced") %>
+      <%= label_tag(:difficulty_advanced, "This is an advanced recipe") %><br>
+
+    <%= radio_button_tag(:difficulty_expert, "Expert") %>
+      <%= label_tag(:difficulty_expert, "This is a pro-level recipe.") %><br>
+
+    <% @recipe.errors.full_messages_for(:difficulty).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

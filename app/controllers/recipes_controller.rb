@@ -14,9 +14,16 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to @recipe
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def favorite # HTTP POST request
@@ -29,5 +36,9 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :difficulty, :description)
   end
 end

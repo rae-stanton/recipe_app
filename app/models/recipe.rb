@@ -29,6 +29,7 @@ class Recipe < ApplicationRecord
   }
   validates :difficulty, presence: true
   validates :name, presence: true
+  validates :description, presence: true, length: { minimum: 30 }
 
   scope :favorites, -> { where(favorite: true) }
 
