@@ -9,8 +9,6 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe.update(favorite: "true")
-    @recipe.save
   end
 
   def new
@@ -18,9 +16,10 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params.merge(author: @current_user))
+
     if @recipe.save
-      redirect_to @recipe
+      redirect_to recipe_path(@recipe)
     else
       render :new, status: :unprocessable_entity
     end
