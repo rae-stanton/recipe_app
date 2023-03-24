@@ -20,7 +20,9 @@ require "rails_helper"
 
 RSpec.describe Recipe, type: :model do
   let(:faust) { User.create(name: "Faust") }
-  let(:recipe) { Recipe.create(name: "Eggplant Hee Hee", author: faust, difficulty: "beginner", favorite: true) }
+  let(:recipe) { Recipe.create(name: "Eggplant Hee Hee", author: faust,
+                              difficulty: "beginner", favorite: true,
+                              description: "Something tasty") }
 
   it "has an author" do
     expect(recipe.author.name).to eq("Faust")
@@ -57,9 +59,12 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe "favorites scope:" do
-    let!(:recipe1) { Recipe.create(author: faust, difficulty: "expert", name: "Favorite Recipe", favorite: true) }
-    let!(:recipe2) { Recipe.create(author: faust, difficulty: "expert", name: "NOT Favorite Recipe", favorite: false) }
-    let!(:recipe3) { Recipe.create(author: faust, difficulty: "expert", name: "Favorite Recipe 2", favorite: true) }
+    let!(:recipe1) { Recipe.create(author: faust, difficulty: "expert",
+                                  name: "Favorite Recipe", favorite: true, description: "Something tasty") }
+    let!(:recipe2) { Recipe.create(author: faust, difficulty: "expert",
+                                  name: "NOT Favorite Recipe", favorite: false, description: "Something tasty") }
+    let!(:recipe3) { Recipe.create(author: faust, difficulty: "expert",
+                                  name: "Favorite Recipe 2", favorite: true, description: "Something tasty") }
 
     it "returns favorite recipes only" do
       expect(Recipe.favorites.pluck(:name)).to include(recipe1.name)

@@ -16,7 +16,7 @@ RSpec.describe "Recipes Index Page",
   let!(:recipe) do
     Recipe.create(
       name: "Eggplant Hee Hee",
-      description: "something",
+      description: "something good",
       difficulty: "beginner",
       author: user
     )
@@ -25,7 +25,7 @@ RSpec.describe "Recipes Index Page",
   let!(:recipe_two) do
     Recipe.create(
       name: "Eggplant Parmasean",
-      description: "something",
+      description: "something good",
       difficulty: "beginner",
       author: user
     )

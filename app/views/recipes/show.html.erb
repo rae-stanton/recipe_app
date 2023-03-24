@@ -16,7 +16,7 @@
         <%= button_to "Favorite This Recipe", favorite_recipe_path(@recipe.id), class: "btn btn-secondary" %>
       <% end %>
       <br>
-      <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+      <%= link_to "Edit Recipe", edit_recipe_path(@recipe.id), class: "btn btn-primary" %>
     </div>
   </div>
 </div>
