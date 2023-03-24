@@ -1,0 +1,29 @@
+<h1> New Recipe</h1>
+
+<%= form_with model: @recipe do |form| %>
+  <div>
+    <%= form.label :name, "Recipe name" %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Recipe description" %><br>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :difficulty, "Select a difficulty:" %><br>
+    <%= radio_button_tag(:difficulty, "Beginner") %>
+      <%= label_tag(:difficulty_beginner, "This is a beginner-friendly recipe") %><br>
+    <%= radio_button_tag(:difficulty, "Intermediate") %>
+      <%= label_tag(:difficulty_intermediate, "This is an intermediate recipe") %><br>
+    <%= radio_button_tag(:difficulty, "Advanced") %>
+      <%= label_tag(:difficulty_advanced, "This is an advanced recipe") %><br>
+    <%= radio_button_tag(:difficulty, "Expert") %>
+      <%= label_tag(:difficulty_expert, "This is a pro-level recipe.") %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<%end%>

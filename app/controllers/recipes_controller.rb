@@ -6,12 +6,17 @@ class RecipesController < ApplicationController
   end
 
   def show
-
   end
 
   def update
     @recipe.update(favorite: "true")
     @recipe.save
+  end
+
+  def new
+  end
+
+  def create
   end
 
   def favorite # HTTP POST request
