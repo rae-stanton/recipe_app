@@ -1,14 +1,11 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :update, :favorite]
+  before_action :set_recipe, only: [:show, :update, :favorite, :edit]
 
   def index
     @recipes = @current_user.recipes
   end
 
   def show
-  end
-
-  def update
   end
 
   def new
@@ -22,6 +19,18 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
