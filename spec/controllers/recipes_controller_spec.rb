@@ -9,14 +9,14 @@ RSpec.describe RecipesController, type: :controller do
       password_confirmation: "foosta"
     )
   end
-    let!(:recipe) do
-      Recipe.create(
-        name: "Eggplant Hee Hee",
-        description: "something good",
-        difficulty: "beginner",
-        author: user
-      )
-    end
+  let!(:recipe) do
+    Recipe.create(
+      name: "Eggplant Hee Hee",
+      description: "something good",
+      difficulty: "beginner",
+      author: user
+    )
+  end
 
   describe "index action" do
     it "renders the :index view" do
