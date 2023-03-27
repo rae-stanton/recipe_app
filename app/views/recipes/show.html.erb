@@ -9,7 +9,7 @@
     <div class="card-body">
       <h2 class="fs-1 card-title"><%= @recipe.name %></h2>
       <p class="d-flex justify-content-start"><%= @recipe.description %></p>
-      <p class="d-flex justify-content-start"><small class="text-muted"><%= @recipe.difficulty %></small></p>
+      <p class="d-flex justify-content-start"><span class="badge bg-success"><%= @recipe.difficulty %></span></p>
       <% if @recipe.favorite == true %>
         <%= button_to "Favorited Recipe", favorite_recipe_path(@recipe.id), class: "btn btn-success" %>
       <% else %>
