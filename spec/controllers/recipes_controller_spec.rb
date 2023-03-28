@@ -1,24 +1,24 @@
 require "rails_helper"
 
 RSpec.describe RecipesController, type: :controller do
-  let!(:user) do 
+  let!(:user) do
     User.create(
-      name: "foosta", 
-      email: "foosta@bubba.com", 
-      password: "foosta", 
+      name: "foosta",
+      email: "foosta@bubba.com",
+      password: "foosta",
       password_confirmation: "foosta"
-    ) 
+    )
   end
-    let!(:recipe) do 
+    let!(:recipe) do
       Recipe.create(
-        name: "Eggplant Hee Hee", 
-        description: "something", 
+        name: "Eggplant Hee Hee",
+        description: "something good",
         difficulty: "beginner",
         author: user
-      ) 
+      )
     end
-  
-  describe "index action" do  
+
+  describe "index action" do
     it "renders the :index view" do
       get :index
       expect(response).to render_template "recipes/index"

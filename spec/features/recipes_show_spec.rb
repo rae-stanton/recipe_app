@@ -15,7 +15,7 @@ RSpec.describe "Recipes Show Page",
   let!(:recipe) do
     Recipe.create(
       name: "Eggplant Hee Hee",
-      description: "something",
+      description: "something good",
       difficulty: "beginner",
       author: user,
       favorite: true

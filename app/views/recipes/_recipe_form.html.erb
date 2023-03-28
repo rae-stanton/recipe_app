@@ -1,0 +1,41 @@
+
+<%= form_with model: recipe do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% recipe.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, cols: 30, rows: 10 %>
+    <% recipe.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <p>Select a difficulty: </p>
+
+    <%= form.radio_button :difficulty, 'beginner' %>
+    <%= form.label :difficulty, "This is a beginner-friendly recipe!" %><br>
+
+    <%= form.radio_button :difficulty, 'intermediate' %>
+    <%= form.label :difficulty, "This is an intermediate recipe!" %><br>
+
+    <%= form.radio_button :difficulty, 'advanced' %>
+    <%= form.label :difficulty, "This is an advanced recipe!" %><br>
+
+    <%= form.radio_button :difficulty, 'expert' %>
+    <%= form.label :difficulty, "This is a chef-level recipe!" %><br>
+
+    <% recipe.errors.full_messages_for(:difficulty).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<%end%>

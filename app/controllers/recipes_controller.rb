@@ -1,17 +1,37 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :update, :favorite]
+  before_action :set_recipe, only: [:show, :update, :favorite, :edit]
 
   def index
     @recipes = @current_user.recipes
   end
 
   def show
+  end
+
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    @recipe = Recipe.new(recipe_params.merge(author: @current_user))
+
+    if @recipe.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
 
   end
 
   def update
-    @recipe.update(favorite: "true")
-    @recipe.save
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def favorite # HTTP POST request
@@ -24,5 +44,9 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :difficulty, :description)
   end
 end

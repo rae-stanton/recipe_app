@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #get 'recipe/:id/edit', to: 'recipes#edit'
   #delete 'recipe/:id', to: 'recipes#destroy'
 
-  resources :recipes, only: %w[index show] do
+  resources :recipes do
     member do
       post '/favorite', to: 'recipes#favorite'
     end
