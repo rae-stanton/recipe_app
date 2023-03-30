@@ -3,11 +3,14 @@
 # Table name: recipes
 #
 #  id          :bigint           not null, primary key
+#  cuisine     :string
 #  description :text
+#  diet        :string
 #  difficulty  :integer
 #  favorite    :boolean          default(FALSE), not null
 #  name        :text
 #  notes       :text
+#  time        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  author_id   :bigint
