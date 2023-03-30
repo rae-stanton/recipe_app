@@ -1,16 +1,49 @@
-<h1>A little bittle about us</h1>
-<h2>We're the henlos!</h2>
 
-<div class="container">
+<style>
+.card {
+  background-image: linear-gradient(to bottom, #a8c545, #e6e6e6);
+}
+</style>
+
+<div class="container my-5">
   <div class="row justify-content-center">
-
-    <div class="col-md-6">
-    The Henlos
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center mb-4">About Us</h1>
+          <div class="row mb-4">
+            <div class="col-md-4 order-1 order-md-0">
+              <!-- Replace the src attribute with the URL of your own image -->
+              <%= image_tag "henlos.png", class: "img-fluid rounded-circle"%>
+            </div>
+            <div class="col-md-8 order-2">
+              <p class="card-text lead">We're Rae and Paul, a pair of home chefs and Rails developers based in the PNW. Our passion for cooking and technology led us to create this site, where we can share our favorite recipes and connect with other food lovers.</p>
+              <p class="card-text lead">In our free time, we enjoy experimenting with new ingredients and techniques in the kitchen. We also love spending time with our two cats, Luna and Faust. </p>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-8 order-3 order-md-0">
+              <p class="card-text lead">Thanks for visiting our site, and we hope you enjoy sharing your recipes! We look forward to sharing ours with you too.</p>
+            </div>
+            <div class="col-md-4 order-4 order-md-1">
+              <!-- Replace the src attribute with the URL of your own image -->
+              <%= image_tag "luna.jpg", class: "img-fluid rounded-circle"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 order-5 order-md-0">
+              <!-- Replace the src attribute with the URL of your own image -->
+              <%= image_tag "foosta.jpg", class: "img-fluid rounded-circle"%>
+            </div>
+            <div class="col-md-8 order-6">
+              <p class="card-text lead">Let's cook! Also, here are our cats for aww factor. Luna's the queen calico, and Faust is the food obsessed Bubba Boi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <small class="text-muted">Developed by Rae and Paul, AKA "HENLO KITCHEN".</small>
+        </div>
+      </div>
     </div>
-
-    <div class="col-md-6">
-    The Cats
-    </div>
-
   </div>
 </div>
