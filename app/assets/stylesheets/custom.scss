@@ -98,6 +98,10 @@ body {
   align-items: center;
 }
 
+.badge {
+  background-image: linear-gradient(to right, rgb(255, 192, 247), purple);
+  color: white;
+}
 /* carousel-favourites */
 
 .carousel-card {
