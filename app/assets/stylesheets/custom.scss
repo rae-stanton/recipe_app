@@ -98,7 +98,25 @@ body {
   align-items: center;
 }
 
-/* carousel-favourites */
+/* custom badges */
+.badge-beginner {
+  background-image: linear-gradient(to right, rgb(204, 69, 139), rgb(214, 214, 73));
+  color: white;
+}
+.badge-intermediate {
+	background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(255, 140, 0));
+	color: white;
+}
+.badge-advanced {
+	background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(57, 125, 177));
+	color: white;
+}
+.badge-expert {
+	background-image: linear-gradient(to right, rgb(49, 132, 63), rgb(81, 4, 81));
+	color: white;
+}
+
+/* carousel-favouritses */
 
 .carousel-card {
   margin: 0 .5em;

@@ -9,7 +9,7 @@
           </h2>
           <br>
           <h3>
-          <span class="badge bg-success"><%= recipe.difficulty %></span>
+              <span class="badge-<%= recipe.difficulty %>"><%= "#{recipe.difficulty}" %></span>
           </h3>
         <p class="card-text"><%= recipe.description %></p>
         <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary", id: "button_#{recipe.id}" %>
