@@ -41,7 +41,7 @@ RSpec.describe "Recipes Edit Page",
     click_link "Edit Recipe"
     expect(page).to have_content("Edit Recipe")
     fill_in "Description", with: "No"
-    click_button "Update Recipe"
+    click_button "Submit"
     expect(page).to have_content("Description is too short (minimum is 10 characters)")
   end
 end
