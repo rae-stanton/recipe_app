@@ -4,7 +4,6 @@ User.create!(
   password: "foostabubba",
   password_confirmation: "foostabubba"
 )
-
 Recipe.create!(
   name: "Pasta with Tomato Sauce",
   description: "A classic Italian pasta dish with a homemade tomato sauce.",
@@ -12,7 +11,6 @@ Recipe.create!(
   favorite: true,
   author_id: 1
 )
-
 Recipe.create!(
   name: "Roasted Chicken with Vegetables",
   description: "Juicy roasted chicken served with a side of seasonal vegetables.",
@@ -46,5 +44,47 @@ Recipe.create!(
   description: "A gourmet dish made with a beef filet, mushrooms, puff pastry, and a red wine reduction sauce.",
   difficulty: "expert",
   favorite: false,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Classic Beef Burger",
+  description: "Juicy beef patty topped with cheddar cheese, tomato, lettuce, and special sauce",
+  difficulty: "Intermediate",
+  favorite: true,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Vegan Buddha Bowl",
+  description: "A nourishing bowl filled with quinoa, roasted sweet potato, kale, and chickpeas",
+  difficulty: "Beginner",
+  favorite: false,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Spicy Tofu Stir Fry",
+  description: "Crispy tofu tossed with mixed vegetables in a spicy soy sauce",
+  difficulty: "Intermediate",
+  favorite: true,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Lemon Butter Salmon",
+  description: "Fresh salmon fillet pan-seared and finished with a lemon butter sauce",
+  difficulty: "Advanced",
+  favorite: false,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Caprese Salad",
+  description: "A classic Italian salad made with fresh tomatoes, mozzarella, basil, and balsamic glaze",
+  difficulty: "Beginner",
+  favorite: true,
+  author_id: 1
+)
+Recipe.create!(
+  name: "Mushroom Risotto",
+  description: "Creamy and comforting risotto made with porcini mushrooms and parmesan cheese",
+  difficulty: "Advanced",
+  favorite: true,
   author_id: 1
 )
