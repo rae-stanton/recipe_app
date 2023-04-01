@@ -43,6 +43,18 @@ RSpec.describe "Recipes Show Page",
     page.find_link(id: "button_#{recipe.id}").click
     click_button "Favorite This Recipe"
   end
+
+  scenario "user clicks on a recipe,
+            user clicks delete,
+            recipe is deleted" do
+
+    visit recipes_path
+    page.find_link(id: "button_#{recipe.id}").click
+    expect(page).to have_content(recipe.name)
+    click_link "Delete Recipe"
+    expect(page).to_not have_content(recipe.id)
+    expect(page).to have_content("Your Recipes, Your Way")
+  end
 end
 
 

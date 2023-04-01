@@ -8,10 +8,10 @@
     </div>
     <div class="card-body">
       <h2 class="fs-1 card-title"><%= @recipe.name %></h2>
-      <p class="d-flex justify-content-start"><%= @recipe.description %></p>
-      <p class="d-flex justify-content-start">
+       <p class="d-flex justify-content-center">
         <span class="badge-<%= @recipe.difficulty %>"><%= "#{@recipe.difficulty}" %></span>
       </p>
+      <p class="d-flex justify-content-center"><%= @recipe.description %></p>
       <% if @recipe.favorite == true %>
         <%= button_to "Favorited Recipe", favorite_recipe_path(@recipe.id), class: "btn btn-success" %>
       <% else %>
@@ -19,6 +19,10 @@
       <% end %>
       <br>
       <%= link_to "Edit Recipe", edit_recipe_path(@recipe.id), class: "btn btn-primary" %>
+      <%= link_to "Delete Recipe", recipe_path(@recipe), class: "btn btn-danger", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
     </div>
   </div>
 </div>
