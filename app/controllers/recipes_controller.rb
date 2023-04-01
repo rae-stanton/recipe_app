@@ -36,14 +36,13 @@ class RecipesController < ApplicationController
 
   def favorite # HTTP POST request
     @recipe.toggle_favorite!
-
     redirect_to recipe_path(id: @recipe.id)
   end
 
-	def destroy
-		@recipe.destroy
-		redirect_to root_path, status: :see_other
-	end
+  def destroy
+    @recipe.destroy
+    redirect_to root_path, status: :see_other
+  end
 
   private
 
