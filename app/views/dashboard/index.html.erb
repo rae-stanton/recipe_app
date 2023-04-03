@@ -46,3 +46,26 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<br>
+<h1>Here are some things you can do.</h1>
+<div class="card shadow">
+  <div class="card-body-dash">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card my-3-inner">
+          <div class="card-body">
+            <%= link_to "Add Your Recipe", new_recipe_path, class: "btn btn-outline-secondary btn-lg"%>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card my-3-inner">
+          <div class="card-body">
+            <%= link_to "View All Recipes", recipes_path, class: "btn btn-outline-secondary btn-lg"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
