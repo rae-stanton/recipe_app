@@ -22,7 +22,10 @@
             <li><%= link_to "About", about_path %></li>
           </li>
           <li class="nav-item">
-            <li><%= link_to "Login", "#" %></li>
+            <li><%= link_to "Login", sessions_path %></li>
+          </li>
+          <li class="nav-item">
+            <li><%= link_to 'Log out', sessions_path, method: :destroy %></li>
           </li>
           <li class="nav-item">
             <li><%= link_to "Signup", signup_path %></li>
