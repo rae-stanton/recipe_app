@@ -12,21 +12,35 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
+           <% if @current_user %>
+						<li class="nav-item">
+							<li>
+                Logged in as: <%= @current_user.name %>
+							</li>
+							<% else %>
+							<li>
+                Not logged in!
+							</li>
+						</li>
+					<% end %>
+          <li class="nav-item">
             <li><%= link_to "Home", root_path %></li>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <li><%= link_to "Recipes", recipes_path %></li>
           </li>
           <li class="nav-item">
             <li><%= link_to "About", about_path %></li>
           </li>
           <li class="nav-item">
-            <li><%= link_to "Login", sessions_path %></li>
+            <li><%= link_to "Login", new_session_path %></li>
           </li>
-          <li class="nav-item">
-            <li><%= link_to 'Log out', sessions_path, method: :destroy %></li>
-          </li>
+          <% if @current_user %>
+						<li class="nav-item">
+							<li><%= link_to 'Log out', session_path(@current_user), data: { "turbo-method": :delete }%></li>
+						</li>
+					<% end %>
+
           <li class="nav-item">
             <li><%= link_to "Signup", signup_path %></li>
           </li>
