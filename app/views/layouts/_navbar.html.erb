@@ -12,17 +12,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-           <% if @current_user %>
-						<li class="nav-item">
-							<li>
-                Logged in as: <%= @current_user.name %>
-							</li>
-							<% else %>
-							<li>
-                Not logged in!
-							</li>
-						</li>
-					<% end %>
           <li class="nav-item">
             <li><%= link_to "Home", root_path %></li>
           </li>
