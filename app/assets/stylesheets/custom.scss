@@ -84,10 +84,10 @@ body {
 
 /* HOME PAGE SPECIFIC */
 .mask {
-	justify-content: center;
-	padding-top: 1em;
-	padding-bottom: 2em;
-	text-align: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  text-align: center;
 }
 
 /* recipe cards */
@@ -104,16 +104,16 @@ body {
   color: white;
 }
 .badge-intermediate {
-	background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(255, 140, 0));
-	color: white;
+  background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(255, 140, 0));
+  color: white;
 }
 .badge-advanced {
-	background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(57, 125, 177));
-	color: white;
+  background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(57, 125, 177));
+  color: white;
 }
 .badge-expert {
-	background-image: linear-gradient(to right, rgb(49, 132, 63), rgb(81, 4, 81));
-	color: white;
+  background-image: linear-gradient(to right, rgb(49, 132, 63), rgb(81, 4, 81));
+  color: white;
 }
 
 /* carousel-favouritses */
@@ -150,13 +150,13 @@ body {
 }
 
 .my-3-inner{
-	background-color: lavender;
-	text-align: center;
+  background-color: lavender;
+  text-align: center;
 }
 
-.card-body-dash{
-	background-color: rgb(186, 185, 185);
-	text-align: center;
-	margin-bottom: 1em;
-	}
+.card-body-dash {
+  background-color: rgb(186, 185, 185);
+  text-align: center;
+  margin-bottom: 1em;
+  }
 
