@@ -12,6 +12,13 @@ RSpec.describe "User Dashboard Page",
     )
   end
 
+  before :each do
+    visit new_session_path
+    fill_in "email", with: "foosta@bubba.com"
+    fill_in "password", with: "foosta"
+    click_button "Login"
+  end
+
   scenario "current user's dashboard should,
     have a carousel with favorite recipes,
     and buttons that add recipe or view all" do
