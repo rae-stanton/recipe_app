@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :dashboard, only: %w[index show]
-
+  resources :sessions
  end
 
 # Need to get tutorial on HTTP Verbs

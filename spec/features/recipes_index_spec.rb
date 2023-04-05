@@ -31,6 +31,13 @@ RSpec.describe "Recipes Index Page",
     )
   end
 
+  before :each do
+    visit new_session_path
+    fill_in "email", with: "foosta@bubba.com"
+    fill_in "password", with: "foosta"
+    click_button "Login"
+  end
+
   it 'user visits the index page,
       clicks a see recipe button,
       views the recipe details,

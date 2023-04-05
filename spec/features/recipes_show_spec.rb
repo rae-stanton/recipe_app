@@ -22,9 +22,15 @@ RSpec.describe "Recipes Show Page",
     )
   end
 
+  before :each do
+    visit new_session_path
+    fill_in "email", with: "foosta@bubba.com"
+    fill_in "password", with: "foosta"
+    click_button "Login"
+  end
+
   scenario "user clicks on a recipe from index page,
             user sees button with text 'favorited recipe'" do
-
     visit recipes_path
     page.find_link(id: "button_#{recipe.id}").click
     expect(page).to have_content(recipe.name)
@@ -34,7 +40,6 @@ RSpec.describe "Recipes Show Page",
   scenario "user visits recipe index page,
             user clicks on a recipe,
             user can favorite that recipe" do
-
     recipe.favorite = false
     recipe.save
     recipe.reload
@@ -47,7 +52,6 @@ RSpec.describe "Recipes Show Page",
   scenario "user clicks on a recipe,
             user clicks delete,
             recipe is deleted" do
-
     visit recipes_path
     page.find_link(id: "button_#{recipe.id}").click
     expect(page).to have_content(recipe.name)
@@ -56,5 +60,3 @@ RSpec.describe "Recipes Show Page",
     expect(page).to have_content("Your Recipes, Your Way")
   end
 end
-
-
