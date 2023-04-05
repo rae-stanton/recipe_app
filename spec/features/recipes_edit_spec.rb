@@ -10,6 +10,7 @@ RSpec.describe "Recipes Edit Page",
       password_confirmation: "foosta"
     )
   end
+
   let!(:recipe) do
     Recipe.create(
       name: "Eggplant Hee Hee",
@@ -17,6 +18,13 @@ RSpec.describe "Recipes Edit Page",
       difficulty: "beginner",
       author: user
     )
+  end
+
+  before :each do
+    visit new_session_path
+    fill_in "email", with: "foosta@bubba.com"
+    fill_in "password", with: "foosta"
+    click_button "Login"
   end
 
   scenario "user clicks on recipe,
