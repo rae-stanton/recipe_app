@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       # Handle a successful save by creating a new User
       # redirect to User welcome page
+      redirect_to root_path, notice: "Account created successfully! Please log in."
     else
       render "new", status: :unprocessable_entity
     end
