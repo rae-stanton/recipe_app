@@ -15,6 +15,10 @@ RSpec.describe "User Dashboard Page",
   scenario "current user's dashboard should,
     have a carousel with favorite recipes,
     and buttons that add recipe or view all" do
+      visit new_session_path
+      fill_in "email", with: "foosta@bubba.com"
+      fill_in "password", with: "foosta"
+      click_button "Login"
       visit dashboard_index_path
       expect(page).to have_content(user.name)
       expect(page).to have_content("Here are some things you can do.")
