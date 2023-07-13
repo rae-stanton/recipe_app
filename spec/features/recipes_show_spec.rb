@@ -57,6 +57,6 @@ RSpec.describe "Recipes Show Page",
     expect(page).to have_content(recipe.name)
     click_link "Delete Recipe"
     expect(page).to_not have_content(recipe.id)
-    expect(page).to have_content("Your Recipes, Your Way")
+    expect(page).to have_content("Recipe deleted successfully")
   end
 end

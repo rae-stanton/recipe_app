@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :favorite, :edit, :destroy]
 
   def index
-    @recipes = @current_user.recipes
+    @recipes = Recipe.all
   end
 
   def show
@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params.merge(author: @current_user))
-
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -23,7 +22,11 @@ class RecipesController < ApplicationController
   end
 
   def edit
-
+    if @recipe.author == @current_user
+      render :edit
+    else
+      redirect_to recipe_path, alert: "You can't edit someone else's recipe!"
+    end
   end
 
   def update
@@ -40,8 +43,12 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe.destroy
-    redirect_to root_path, status: :see_other
+    if @recipe.author == @current_user
+      @recipe.destroy
+      redirect_to recipes_path, notice: 'Recipe deleted successfully.'
+    else
+      redirect_to recipes_path, alert: "You can't delete someone else's recipe!"
+    end
   end
 
   private
