@@ -6,7 +6,10 @@ This recipe app is a passion project of mine. I wanted to build something that I
 To view the app live, click here:
 https://rocky-beach-79846.herokuapp.com/
 
-Then click `login`, and use the email `faust@example.com`
+You can either:
+click `login`, and use the email `faust@example.com`
 for the password, use `foostabubba`, all lower-case.
+
+OR create your own account!
 
 More features are in the works! 
