@@ -5,6 +5,7 @@
 INDIGO #366775
 GRAY-BLUE #A2B4C0
 BLUSH #F7D0CB
+PINKISH PEACH #F7B3A0
 WARM PEACH #F4AC94
 SOFT BURNT ORANGE #D66D50
 
@@ -27,7 +28,7 @@ textarea {
 
 /* NAV */
 .navbar {
-  background-color: #e8e8e9;
+  background-color: #A2B4C0;
 }
 .navbar-nav > li {
   padding-left: 30px;
@@ -36,7 +37,7 @@ textarea {
 }
 
 .navbar-nav > li > a {
-  color: #0e3013;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -125,40 +126,28 @@ p {
 /* custom difficulty chips */
 
 .badge-beginner {
-  background-image: linear-gradient(
-    to right,
-    rgb(204, 69, 139),
-    rgb(214, 214, 73)
-  );
+  background-color: #A2B4C0;
   color: white;
   padding: 4px;
   border-radius: 8px;
 }
 
 .badge-intermediate {
-  background-image: linear-gradient(
-    to right,
-    rgb(188, 81, 190),
-    rgb(255, 140, 0)
-  );
+  background-color: #F7B3A0;
   color: white;
   padding: 4px;
   border-radius: 8px;
 }
 
 .badge-advanced {
-  background-image: linear-gradient(
-    to right,
-    rgb(188, 81, 190),
-    rgb(57, 125, 177)
-  );
+  background-color: #F4AC94;
   color: white;
   padding: 4px;
   border-radius: 8px;
 }
 
 .badge-expert {
-  background-image: linear-gradient(to right, rgb(49, 132, 63), rgb(81, 4, 81));
+  background-color: #D66D50;
   color: white;
   padding: 4px;
   border-radius: 8px;
