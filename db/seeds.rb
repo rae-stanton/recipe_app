@@ -70,7 +70,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Lemon Butter Salmon",
   description: "Fresh salmon fillet pan-seared and finished with a lemon butter sauce",
-  difficulty: "Advanced",
+  difficulty: "advanced",
   favorite: false,
   author_id: 1
 )
@@ -84,7 +84,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Mushroom Risotto",
   description: "Creamy and comforting risotto made with porcini mushrooms and parmesan cheese",
-  difficulty: "Advanced",
+  difficulty: "advanced",
   favorite: true,
   author_id: 1
 )
