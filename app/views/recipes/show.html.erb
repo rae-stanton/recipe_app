@@ -1,8 +1,8 @@
 <h1>Recipe Details</h1>
 
-<div class="container">
-  <div class="card d-flex mb-3" style="h-100; width: 100;">
-    <div class="d-flex justify-content-center pt-4">
+<div class="large-recipe-container">
+  <div class="card d-flex mb-3" style=" width: 60%">
+    <div class="d-flex justify-content-center">
       <% if @recipe.photo.attached? %>
         <%= image_tag url_for(@recipe.photo), class: "card-image-detail rounded", alt: "Recipe image" %>
       <% else %>
