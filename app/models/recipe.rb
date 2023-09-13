@@ -23,6 +23,7 @@ class Recipe < ApplicationRecord
   belongs_to :author, class_name: "User"
 
   has_many :ingredients
+  has_one_attached :photo
 
   enum difficulty: {
     beginner: 0,
@@ -41,4 +42,5 @@ class Recipe < ApplicationRecord
 
     update(favorite: true)
   end
+
 end

@@ -1,16 +1,20 @@
 <div class="card-deck">
   <div class="col d-flex">
     <div class="card text-center" style="width: 25rem; h-100">
-      <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089"
-            class="card-img-top" alt="...">
+      <% if recipe.photo.attached? %>
+        <%= image_tag recipe.photo, class: "card-img-top", alt: "Recipe Photo" %>
+      <% else %>
+        <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089"
+             class="card-img-top" alt="...">
+      <% end %>
       <div class="card-body">
         <h2 class="card-title">
           <%= recipe.name %>
-          </h2>
-          <br>
-          <h3>
-              <span class="badge-<%= recipe.difficulty %>"><%= "#{recipe.difficulty}" %></span>
-          </h3>
+        </h2>
+        <br>
+        <h3>
+          <span class="badge-<%= recipe.difficulty %>"><%= recipe.difficulty %></span>
+        </h3>
         <p class="card-text"><%= recipe.description %></p>
         <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary", id: "button_#{recipe.id}" %>
       </div>

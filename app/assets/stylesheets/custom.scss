@@ -1,4 +1,3 @@
-
 @import "bootstrap";
 
 /* universal */
@@ -16,9 +15,9 @@ textarea {
 }
 
 /* NAV */
-.navbar-nav > li{
-  padding-left:30px;
-  padding-right:30px;
+.navbar-nav > li {
+  padding-left: 30px;
+  padding-right: 30px;
   text-align: right;
 }
 
@@ -27,9 +26,6 @@ textarea {
   text-transform: uppercase;
   text-decoration: none;
 }
-
-
-
 
 .center {
   text-align: center;
@@ -41,7 +37,12 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1;
 }
 
@@ -65,7 +66,7 @@ h2 {
 }
 
 h3 {
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: normal;
   margin-bottom: 20px;
   text-align: center;
@@ -90,25 +91,56 @@ body {
   text-align: center;
 }
 
-/* recipe cards */
+// /* recipe cards */
 
 .card-deck {
-  display:inline-block;
+  display: inline-block;
   margin-bottom: 60px;
   align-items: center;
 }
 
+.card-image-detail {
+  width: 70%;
+  height: 400px; // You can set to another value that suits your design
+  object-fit: cover; // This will cover the area without distorting the aspect ratio
+}
+
+
+// .card {
+//   border: 1px solid #ccc;
+//   padding: 16px;
+//   border-radius: 4px;
+// }
+
+// .card img {
+//   max-width: 253px;
+//   max-height: 450px;
+//   border-radius: 4px;
+// }
+
 /* custom badges */
 .badge-beginner {
-  background-image: linear-gradient(to right, rgb(204, 69, 139), rgb(214, 214, 73));
+  background-image: linear-gradient(
+    to right,
+    rgb(204, 69, 139),
+    rgb(214, 214, 73)
+  );
   color: white;
 }
 .badge-intermediate {
-  background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(255, 140, 0));
+  background-image: linear-gradient(
+    to right,
+    rgb(188, 81, 190),
+    rgb(255, 140, 0)
+  );
   color: white;
 }
 .badge-advanced {
-  background-image: linear-gradient(to right, rgb(188, 81, 190), rgb(57, 125, 177));
+  background-image: linear-gradient(
+    to right,
+    rgb(188, 81, 190),
+    rgb(57, 125, 177)
+  );
   color: white;
 }
 .badge-expert {
@@ -119,11 +151,11 @@ body {
 /* carousel-favouritses */
 
 .carousel-card {
-  margin: 0 .5em;
+  margin: 0 0.5em;
   border: none;
   border-radius: 0;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  width: calc(100%/3)
+  width: calc(100% / 3);
 }
 
 .cards-wrapper {
@@ -140,7 +172,8 @@ body {
   max-height: 100%;
 }
 
-.carousel-control-prev,.carousel-control-next{
+.carousel-control-prev,
+.carousel-control-next {
   background-color: #e1e1e1;
   width: 6vh;
   height: 6vh;
@@ -149,7 +182,7 @@ body {
   transform: translateY(-50%);
 }
 
-.my-3-inner{
+.my-3-inner {
   background-color: lavender;
   text-align: center;
 }
@@ -158,5 +191,4 @@ body {
   background-color: rgb(186, 185, 185);
   text-align: center;
   margin-bottom: 1em;
-  }
-
+}

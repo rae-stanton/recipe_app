@@ -1,10 +1,14 @@
-<h1> Recipe Details </h1>
+<h1>Recipe Details</h1>
 
 <div class="container">
   <div class="card d-flex mb-3" style="h-100; width: 100;">
     <div class="d-flex justify-content-center pt-4">
-      <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089"
-            class="card-image rounded" alt="...">
+      <% if @recipe.photo.attached? %>
+        <%= image_tag url_for(@recipe.photo), class: "card-image-detail rounded", alt: "Recipe image" %>
+      <% else %>
+        <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089"
+            class="card-image-detail rounded" alt="...">
+      <% end %>
     </div>
     <div class="card-body">
       <h2 class="fs-1 card-title"><%= @recipe.name %></h2>

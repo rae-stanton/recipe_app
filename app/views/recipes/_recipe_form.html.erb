@@ -29,11 +29,15 @@
     <%= form.label :difficulty, "This is an advanced recipe!" %><br>
 
     <%= form.radio_button :difficulty, 'expert' %>
-    <%= form.label :difficulty, "This is a chef-level recipe!" %><br>
+    <%= form.label :difficulty, "This is a chef-level recipe!" %><br><br>
 
     <% recipe.errors.full_messages_for(:difficulty).each do |message| %>
       <div><%= message %></div>
     <% end %>
+
+    <%= form.label :photo %> <br>
+    <%= form.file_field :photo %> <br>
+
   </div>
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
