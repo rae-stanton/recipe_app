@@ -15,7 +15,7 @@
                 <%= image_tag "https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089", alt: recipe.name %>
               <% end %>
             </div>
-            <div class="card-body">
+            <div class="carousel-card-body">
               <h5 class="card-title"><%= recipe.name %></h5>
               <p class="card-text"><%= recipe.description %></p>
               <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary" %>
@@ -35,7 +35,7 @@
                 <%= image_tag "https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089", alt: recipe.name %>
               <% end %>
           </div>
-          <div class="card-body">
+          <div class="carousel-card-body">
             <h5 class="card-title"><%= recipe.name %></h5>
             <p class="card-text"><%= recipe.description %></p>
             <%= link_to "See Recipe", recipe_path(id: recipe.id), class: "btn btn-primary" %>

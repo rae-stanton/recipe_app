@@ -164,14 +164,15 @@ p {
   border-radius: 8px;
 }
 
-/* carousel-favourites */
+/* Dashboard favorite recipe cards */
 
 .carousel-card {
-  margin: 0 0.5em;
+  margin: 2px 0.5em;
   border: none;
   border-radius: 0;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   width: calc(100% / 3);
+  border-radius: 30px;
 }
 
 .cards-wrapper {
@@ -184,11 +185,14 @@ p {
 }
 
 .image-wrapper img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 546px;
-  height: 688px;
+  width: 225px; /* Adjust as necessary */
+  height: 225px; /* Adjust as necessary */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto; /* Center the image */
 }
+
+/* Carousel styling */
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -211,6 +215,11 @@ p {
   margin-bottom: 1em;
 }
 
+.carousel-card-body{
+  text-align: center;
+  margin-bottom: 8px;
+}
+
 // This is for the full recipe view
 .large-recipe-container {
   display: flex;
@@ -218,6 +227,7 @@ p {
   align-items: center;
   min-height: 100vh;
   padding: 10px;
+  border-radius: 20px;
 }
 
 .large-recipe-container .card-image-detail {
@@ -227,6 +237,7 @@ p {
   object-fit: cover;
 }
 
+//for smaller recipe cards
 .card img.card-img-top {
   width: 225px; /* Adjust as necessary */
   height: 225px; /* Adjust as necessary */
