@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :favorite, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @recipes = Recipe.all
@@ -59,5 +60,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :difficulty, :description, :photo)
+  end
+
+  def authenticate_user!
+    redirect_to new_session_path unless @current_user
   end
 end
