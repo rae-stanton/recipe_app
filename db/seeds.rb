@@ -56,7 +56,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Vegan Buddha Bowl",
   description: "A nourishing bowl filled with quinoa, roasted sweet potato, kale, and chickpeas",
-  difficulty: "Beginner",
+  difficulty: "beginner",
   favorite: false,
   author_id: 1
 )
@@ -77,7 +77,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Caprese Salad",
   description: "A classic Italian salad made with fresh tomatoes, mozzarella, basil, and balsamic glaze",
-  difficulty: "Beginner",
+  difficulty: "beginner",
   favorite: true,
   author_id: 1
 )
