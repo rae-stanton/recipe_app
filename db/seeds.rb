@@ -49,7 +49,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Classic Beef Burger",
   description: "Juicy beef patty topped with cheddar cheese, tomato, lettuce, and special sauce",
-  difficulty: "Intermediate",
+  difficulty: "intermediate",
   favorite: true,
   author_id: 1
 )
@@ -63,7 +63,7 @@ Recipe.create!(
 Recipe.create!(
   name: "Spicy Tofu Stir Fry",
   description: "Crispy tofu tossed with mixed vegetables in a spicy soy sauce",
-  difficulty: "Intermediate",
+  difficulty: "intermediate",
   favorite: true,
   author_id: 1
 )
