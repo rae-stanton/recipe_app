@@ -100,9 +100,13 @@ p {
   padding-top: 1em;
   padding-bottom: 2em;
   text-align: center;
-  background-color: rgba(225, 225, 225, 0.5); /* 0.5 is the alpha value, representing 50% opacity */
+  background-color: rgba(
+    225,
+    225,
+    225,
+    0.5
+  ); /* 0.5 is the alpha value, representing 50% opacity */
 }
-
 
 // /* recipe cards */
 
@@ -118,7 +122,8 @@ p {
   object-fit: cover; // This will cover the area without distorting the aspect ratio
 }
 
-/* custom badges */
+/* custom difficulty chips */
+
 .badge-beginner {
   background-image: linear-gradient(
     to right,
@@ -126,7 +131,10 @@ p {
     rgb(214, 214, 73)
   );
   color: white;
+  padding: 4px;
+  border-radius: 8px;
 }
+
 .badge-intermediate {
   background-image: linear-gradient(
     to right,
@@ -134,7 +142,10 @@ p {
     rgb(255, 140, 0)
   );
   color: white;
+  padding: 4px;
+  border-radius: 8px;
 }
+
 .badge-advanced {
   background-image: linear-gradient(
     to right,
@@ -142,10 +153,15 @@ p {
     rgb(57, 125, 177)
   );
   color: white;
+  padding: 4px;
+  border-radius: 8px;
 }
+
 .badge-expert {
   background-image: linear-gradient(to right, rgb(49, 132, 63), rgb(81, 4, 81));
   color: white;
+  padding: 4px;
+  border-radius: 8px;
 }
 
 /* carousel-favourites */
@@ -209,4 +225,19 @@ p {
   aspect-ratio: 16/9; /* Adjust as necessary to get the desired aspect ratio */
   width: 100%; /* This will make the image take up the full width of its container */
   object-fit: cover;
+}
+
+.card img.card-img-top {
+  width: 225px; /* Adjust as necessary */
+  height: 225px; /* Adjust as necessary */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto; /* Center the image */
+}
+.small-recipe-card {
+  border-radius: 30px;
+}
+.btn-primary {
+  background-color: #289944 !important;
+  color: white;
 }
