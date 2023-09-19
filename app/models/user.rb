@@ -22,4 +22,7 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  has_many :user_favorite_recipes, dependent: :destroy
+  has_many :favorite_recipes, through: :user_favorite_recipes, source: :recipe
 end

@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :update, :favorite, :edit, :destroy]
+  before_action :set_recipe, only: [:show, :update, :favorite, :unfavorite, :edit, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @favorited_recipe = UserFavoriteRecipe.where(user: @current_user, recipe: @recipe).first
   end
 
   def new
@@ -39,7 +40,12 @@ class RecipesController < ApplicationController
   end
 
   def favorite # HTTP POST request
-    @recipe.toggle_favorite!
+    UserFavoriteRecipe.create(user: @current_user, recipe: @recipe)
+    redirect_to recipe_path(id: @recipe.id)
+  end
+
+  def unfavorite
+    UserFavoriteRecipe.where(user: @current_user, recipe: @recipe).first.destroy
     redirect_to recipe_path(id: @recipe.id)
   end
 

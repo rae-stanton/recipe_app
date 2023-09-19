@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :recipes do
     member do
       post '/favorite', to: 'recipes#favorite'
+      post '/unfavorite', to: 'recipes#unfavorite'
     end
   end
 

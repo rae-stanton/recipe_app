@@ -16,8 +16,8 @@
         <span class="badge-<%= @recipe.difficulty %>"><%= "#{@recipe.difficulty}" %></span>
       </p>
       <p class="d-flex justify-content-center"><%= @recipe.description %></p>
-      <% if @recipe.favorite == true %>
-        <%= button_to "Favorited Recipe", favorite_recipe_path(@recipe.id), class: "btn btn-success" %>
+      <% if @favorited_recipe.present? %>
+        <%= button_to "Un-favorite Recipe", unfavorite_recipe_path(@recipe.id), class: "btn btn-success" %>
       <% else %>
         <%= button_to "Favorite This Recipe", favorite_recipe_path(@recipe.id), class: "btn btn-secondary" %>
       <% end %>
