@@ -4,3 +4,12 @@ import "controllers"
 
 import "@popperjs/core"
 import "bootstrap"
+
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('img');
+    images.forEach(function(img) {
+        img.onerror = function() {
+            img.src = 'https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089';
+        };
+    });
+});

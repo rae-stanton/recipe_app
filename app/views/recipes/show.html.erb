@@ -1,10 +1,11 @@
 <h1>Recipe Details</h1>
+<%= javascript_include_tag 'application' %>
 
 <div class="large-recipe-container">
   <div class="card d-flex mb-3" style=" width: 60%">
     <div class="d-flex justify-content-center">
       <% if @recipe.photo.attached? %>
-        <%= image_tag url_for(@recipe.photo), class: "card-image-detail rounded", alt: "Recipe image", onerror: "this.onerror=null;this.src='https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089';" %>
+        <%= image_tag url_for(@recipe.photo), class: "card-image-detail rounded", alt: "Recipe image" %>
       <% else %>
         <img src="https://static.toiimg.com/thumb/78028918.cms?width=680&height=512&imgsize=2041089"
             class="card-image-detail rounded" alt="Default recipe image">
