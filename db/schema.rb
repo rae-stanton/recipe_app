@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_18_235319) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_22_170450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,6 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_235319) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "user_favorite_recipes", "recipes"
-  add_foreign_key "user_favorite_recipes", "users"
+  add_foreign_key "user_favorite_recipes", "recipes", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "user_favorite_recipes", "users", on_update: :cascade, on_delete: :cascade
 end
