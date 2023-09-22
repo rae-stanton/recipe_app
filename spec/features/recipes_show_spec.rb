@@ -29,14 +29,18 @@ RSpec.describe "Recipes Show Page",
     click_button "Login"
   end
 
-  # scenario "user clicks on a recipe from index page,
-  #           user sees button with text 'Un-favorite Recipe'" do
-  #   visit recipes_path
-  #   page.find_link(id: "button_#{recipe.id}").click
-  #   expect(page).to have_content(recipe.name)
-  #   click_button "Un-favorite Recipe"
-  # end
-  # Fix this test to reflect changes
+  scenario "user clicks on a recipe from index page,
+            user sees button with text 'Un-favorite Recipe'" do
+    recipe.favorite = true
+    recipe.save
+    recipe.reload
+
+    visit recipes_path
+    page.find_link(id: "button_#{recipe.id}").click
+    expect(page).to have_content(recipe.name)
+    click_on "Favorite This Recipe"
+    click_button "Un-favorite Recipe"
+  end
 
   scenario "user visits recipe index page,
             user clicks on a recipe,

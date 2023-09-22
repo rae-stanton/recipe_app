@@ -218,6 +218,16 @@ p {
   padding: 10px;
   border-radius: 20px;
 }
+.large-recipe-container .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.large-recipe-container .btn-primary {
+  margin: 5px;
+}
 
 .large-recipe-container .card-image-detail {
   border-radius: 20px; /* Adjust as necessary to get the desired roundness */
