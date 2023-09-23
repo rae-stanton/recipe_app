@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_170450) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_190102) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,9 +45,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_170450) do
   create_table "ingredients", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ingredient"
+    t.string "name"
+  end
+
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
     t.integer "quantity"
     t.string "measurement"
-    t.string "ingredient"
+    t.string "diet"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -60,7 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_170450) do
     t.integer "difficulty"
     t.boolean "favorite", default: false, null: false
     t.string "cuisine"
-    t.string "diet"
     t.string "time"
     t.index ["author_id"], name: "index_recipes_on_author_id"
   end
@@ -84,6 +94,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_170450) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "recipe_ingredients", "ingredients", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "recipe_ingredients", "recipes", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_favorite_recipes", "recipes", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_favorite_recipes", "users", on_update: :cascade, on_delete: :cascade
 end
