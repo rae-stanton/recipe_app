@@ -22,7 +22,10 @@
 class Recipe < ApplicationRecord
   belongs_to :author, class_name: "User"
 
-  has_many :ingredients
+  has_many :measurement
+  has_many :recipe_ingredients
+  has_many :ingredients, through: :recipe_ingredients
+
   has_one_attached :photo
 
   enum difficulty: {

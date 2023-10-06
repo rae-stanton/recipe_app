@@ -49,6 +49,10 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(id: @recipe.id)
   end
 
+  def recipe_ingredients
+    RecipeIngredient.create(ingredient: @ingredient, recipe: @recipe)
+  end
+
   def destroy
     if @recipe.author == @current_user
       @recipe.destroy
