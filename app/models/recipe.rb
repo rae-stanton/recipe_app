@@ -22,9 +22,10 @@
 class Recipe < ApplicationRecord
   belongs_to :author, class_name: "User"
 
-  has_many :measurement
+  has_many :measurements
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
+  accepts_nested_attributes_for :ingredients
 
   has_one_attached :photo
 
