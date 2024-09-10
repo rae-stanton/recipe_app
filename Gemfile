@@ -9,7 +9,7 @@ gem "rails", "~> 7.0.4"
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'popper_js', '~> 2.11', '>= 2.11.6'
-#gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
+# gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
 #gem 'jsbundling-rails', '~> 1.1', '>= 1.1.1'
 
 gem 'rake', '~> 13.0', '>= 13.0.6'

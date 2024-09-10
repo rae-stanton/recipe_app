@@ -26,5 +26,3 @@ Rails.application.routes.draw do
   resources :sessions
  end
 
-# Need to get tutorial on HTTP Verbs
-# Refresher on the Rails Router, and the "resources" method.

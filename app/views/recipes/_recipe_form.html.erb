@@ -1,5 +1,4 @@
-
-<%= form_with model: recipe do |form| %>
+<%= form_with model: recipe, local: true do |form| %>
   <div class="card">
     <div class="card-body">
       <%= form.label :name, class: "form-label" %><br>
@@ -8,38 +7,53 @@
         <div><%= message %></div>
       <% end %>
 
-  <div class="mb-3">
-    <%= form.label :description, class: "form-label" %><br>
-    <%= form.text_area :description, class: "form-control", rows: 5, placeholder: "Enter recipe description" %>
-    <% recipe.errors.full_messages_for(:description).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+      <div class="mb-3">
+        <%= form.label :description, class: "form-label" %><br>
+        <%= form.text_area :description, class: "form-control", rows: 5, placeholder: "Enter recipe description" %>
+        <% recipe.errors.full_messages_for(:description).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+
+      <!-- Ingredients Section -->
+      <h4>Ingredients</h4>
+      <%= form.fields_for :recipe_ingredients do |recipe_ingredient_fields| %>
+        <div class="mb-3">
+          <!-- Ingredient Name Input -->
+          <%= recipe_ingredient_fields.label :ingredient_name, "Ingredient", class: "form-label" %><br>
+          <%= recipe_ingredient_fields.text_field :ingredient_name, class: "form-control", placeholder: "Enter ingredient name" %>
+
+          <!-- Quantity Input -->
+          <%= recipe_ingredient_fields.label :quantity, "Quantity", class: "form-label" %>
+          <%= recipe_ingredient_fields.number_field :quantity, class: "form-control", placeholder: "Enter quantity" %>
+
+          <!-- Measurement Dropdown -->
+          <%= recipe_ingredient_fields.label :measurement, "Measurement", class: "form-label" %>
+          <%= recipe_ingredient_fields.select :measurement, ['grams', 'cups', 'tablespoons', 'teaspoons'], { prompt: 'Select measurement' }, { class: "form-control" } %>
+
+        </div>
+      <% end %>
+
+      <!-- Difficulty Selection -->
+      <div class="mb-3">
+        <%= form.label :difficulty, class: "form-label" %><br>
+        <%= form.radio_button :difficulty, 'beginner' %>
+        <%= form.label :difficulty, "Beginner" %><br>
+
+        <%= form.radio_button :difficulty, 'intermediate' %>
+        <%= form.label :difficulty, "Intermediate" %><br>
+
+        <%= form.radio_button :difficulty, 'advanced' %>
+        <%= form.label :difficulty, "Advanced" %><br>
+
+        <%= form.radio_button :difficulty, 'expert' %>
+        <%= form.label :difficulty, "Expert" %><br>
+      </div>
+
+      <%= form.label :photo %><br>
+      <%= form.file_field :photo %><br>
+
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
   </div>
-
-  <div class="mb-3">
-    <%= form.label :difficulty, class: "form-label" %><br>
-
-    <%= form.radio_button :difficulty, 'beginner' %>
-    <%= form.label :difficulty, "This is a beginner-friendly recipe!" %><br>
-
-    <%= form.radio_button :difficulty, 'intermediate' %>
-    <%= form.label :difficulty, "This is an intermediate recipe!" %><br>
-
-    <%= form.radio_button :difficulty, 'advanced' %>
-    <%= form.label :difficulty, "This is an advanced recipe!" %><br>
-
-    <%= form.radio_button :difficulty, 'expert' %>
-    <%= form.label :difficulty, "This is a chef-level recipe!" %><br><br>
-
-    <% recipe.errors.full_messages_for(:difficulty).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-
-    <%= form.label :photo %> <br>
-    <%= form.file_field :photo %> <br>
-
-  </div>
-    <%= form.submit "Submit", class: "btn btn-primary" %>
-  </div>
-<%end%>
-
+<% end %>

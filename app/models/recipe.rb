@@ -22,10 +22,10 @@
 class Recipe < ApplicationRecord
   belongs_to :author, class_name: "User"
 
-  has_many :measurements
-  has_many :recipe_ingredients
+  has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
-  accepts_nested_attributes_for :ingredients
+
+  accepts_nested_attributes_for :recipe_ingredients, allow_destroy: true, reject_if: proc { |attributes| attributes['ingredient_name'].blank? || attributes['quantity'].blank? || attributes['measurement'].blank? }
 
   has_one_attached :photo
 
@@ -35,6 +35,7 @@ class Recipe < ApplicationRecord
     advanced: 2,
     expert: 3
   }
+
   validates :difficulty, presence: true
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }
@@ -42,9 +43,9 @@ class Recipe < ApplicationRecord
   scope :favorites, -> { where(favorite: true) }
 
   def toggle_favorite!
-    return update(favorite: false) if favorite.present? # this is equivalent to favorite == true
+    return update(favorite: false) if favorite.present?
 
     update(favorite: true)
   end
-
 end
+
